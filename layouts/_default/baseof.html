@@ -9,7 +9,7 @@
 {{ $.Scratch.Set "bg_color" (index $color_map (site.Params.color | default (print "linen"))) }}<!---->
 
 <!-- social_list -->
-{{ $social_params := slice "twitter" "github" "facebook" "rss" }}<!---->
+{{ $social_params := slice "twitter" "github" "rss" }}<!---->
 {{ range $social_params }}<!---->
 {{ if isset site.Params . }}<!---->
 {{ $.Scratch.Add "social_list" (slice .) }}<!---->
