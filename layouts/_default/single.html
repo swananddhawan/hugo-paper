@@ -7,7 +7,11 @@
     {{ if ne .Type "page" }}
     <div class="text-sm opacity-60">
       {{ if .Date }}
-      <time>{{ .Date | time.Format ":date_medium" }}</time>
+      <time>Published on {{ .Date | time.Format ":date_medium" }}</time>
+      {{ end }}<!---->
+      {{ if .Lastmod }}
+      <span class="mx-1">&middot;</span>
+      <time>Last modified on {{ .Lastmod | time.Format ":date_medium" }}</time>
       {{ end }}<!---->
       <span class="mx-1">&middot;</span>
       {{ (slice (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
