@@ -47,6 +47,8 @@
   <h2 class="!my-0 pb-1 !leading-none">{{ .Title }}</h2>
   <time class="text-sm opacity-60">{{ .Date | time.Format ":date_medium" }}</time>
   <a class="absolute inset-0" href="{{ .Permalink }}"></a>
+  <span class="mx-1">&middot;</span>
+  {{ (slice (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
 </section>
 {{ end }}
 
